@@ -58,8 +58,8 @@ Vagrant.configure("2") do |config|
         # Name shown in the GUI
         node.vm.provider "virtualbox" do |vb|
             vb.name = "kubemaster"
-            vb.memory = 1430
-            vb.cpus = 1.5
+            vb.memory = 1700
+            vb.cpus = 2
         end
         node.vm.hostname = "kubemaster"
         node.vm.network :private_network, ip: IP_NW + "#{MASTER_IP_START + i}"
@@ -80,8 +80,8 @@ Vagrant.configure("2") do |config|
     config.vm.define "kubenode0#{i}" do |node|
         node.vm.provider "virtualbox" do |vb|
             vb.name = "kubenode0#{i}"
-            vb.memory = 1430
-            vb.cpus = 1.5
+            vb.memory = 1700
+            vb.cpus = 2
         end
         node.vm.hostname = "kubenode0#{i}"
         node.vm.network :private_network, ip: IP_NW + "#{NODE_IP_START + i}"
